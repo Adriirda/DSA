@@ -1,0 +1,7 @@
+This model takes two inputs - plant_capacity and load_demand, which are arrays representing the capacities of the power plants and the load demands respectively. 
+The function returns the maximum load that can be accommodated using the dynamic programming approach.
+
+The dp array is used to store intermediate results and the loop structures help in filling the array with the required values. 
+The loop variables i and j iterate over the number of power plants and the load demand, respectively.
+The if-else statement checks if the load demand is greater than or equal to the number of power plants, and accordingly updates the dp array. 
+Finally, the maximum load that can be accommodated is returned by the function.
