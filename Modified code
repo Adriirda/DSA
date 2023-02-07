@@ -1,0 +1,12 @@
+def plant_load_distribution(plant_capacity, load_demand):
+    n = len(plant_capacity)
+    m = load_demand
+    dp = [0] * (m + 1)
+ 
+    for i in range(1, n + 1):
+        for j in range(plant_capacity[i - 1], m + 1):
+            dp[j] = max(dp[j], dp[j - plant_capacity[i - 1]] + plant_capacity[i - 1])
+ 
+    return dp[m]
+ 
+ 
