@@ -1,0 +1,14 @@
+
+
+function plant_load_distribution(plant_capacity, load_demand)
+    n = length of plant_capacity
+    m = length of load_demand
+    dp = 2D array of size n + 1 and m + 1
+    for i = 1 to n
+        for j = 1 to m
+            if j >= i
+                dp[i][j] = maximum of (dp[i - 1][j], dp[i][j - i] + plant_capacity[i - 1])
+            else
+                dp[i][j] = dp[i - 1][j]
+    return dp[n][m]
+end function
