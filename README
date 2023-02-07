@@ -1,3 +1,5 @@
+BASIC CODE 
+
 This model takes two inputs - plant_capacity and load_demand, which are arrays representing the capacities of the power plants and the load demands respectively. 
 The function returns the maximum load that can be accommodated using the dynamic programming approach.
 
@@ -5,3 +7,24 @@ The dp array is used to store intermediate results and the loop structures help 
 The loop variables i and j iterate over the number of power plants and the load demand, respectively.
 The if-else statement checks if the load demand is greater than or equal to the number of power plants, and accordingly updates the dp array. 
 Finally, the maximum load that can be accommodated is returned by the function.
+
+Step 1: Define the function `plant_load_distribution` that takes two inputs: `plant_capacity` and `load_demand`
+Step 2: Initialize the number of power plants, `n`, by finding the length of `plant_capacity`
+Step 3: Initialize the load demand, `m`, by finding the length of `load_demand`
+Step 4: Create a 2D array `dp` with size `n + 1` and `m + 1` to store the intermediate results
+Step 5: Use a nested loop to iterate over the number of power plants and the load demand
+Step 6: Check if the load demand, `j`, is greater than or equal to the number of power plants, `i`
+Step 7: If `j >= i`, update `dp[i][j]` with the maximum value of `dp[i - 1][j]` and `dp[i][j - i] + plant_capacity[i - 1]`
+Step 8: If `j < i`, update `dp[i][j]` with the value of `dp[i - 1][j]`
+Step 9: Repeat steps 6 to 8 until all elements of `dp` are filled
+Step 10: Return `dp[n][m]` as the result, which represents the maximum load that can be accommodated
+Step 11: End the function
+
+
+
+MODIFIED CODE 
+
+In this code, the plant_load_distribution function takes two arguments - plant_capacity and load_demand. 
+It uses a 1D array dp to store the intermediate results and applies the dynamic programming approach in progressive structure to determine the maximum load that can be accommodated. 
+The final result is returned by the function.
+
