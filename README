@@ -21,10 +21,33 @@ Step 10: Return `dp[n][m]` as the result, which represents the maximum load that
 Step 11: End the function
 
 
+Inputs: The inputs to the algorithm are plant_capacity and load_demand, which are arrays representing the capacities of the power plants and the load demands respectively.
+
+Initialization: Initialize a 2D array dp with size n + 1 and m + 1, where n is the length of plant_capacity and m is the length of load_demand.
+
+Loop structure: Use a nested loop structure to iterate over the number of power plants and the load demand, respectively. The outer loop variable i ranges from 1 to n and the inner loop variable j ranges from 1 to m.
+
+Dynamic Programming: In each iteration of the loop, apply the following steps:
+
+If j >= i, update dp[i][j] as the maximum of dp[i - 1][j] and dp[i][j - i] + plant_capacity[i - 1]. This step represents the decision of whether to use the current power plant to accommodate the load demand or not.
+If j < i, update dp[i][j] as dp[i - 1][j]. This step represents the decision to not use the current power plant to accommodate the load demand.
+Return: Return dp[n][m] as the maximum load that can be accommodated using the dynamic programming approach.
+
+
 
 MODIFIED CODE 
 
 In this code, the plant_load_distribution function takes two arguments - plant_capacity and load_demand. 
 It uses a 1D array dp to store the intermediate results and applies the dynamic programming approach in progressive structure to determine the maximum load that can be accommodated. 
 The final result is returned by the function.
+
+nputs: The inputs to the algorithm are plant_capacity and load_demand, which are arrays representing the capacities of the power plants and the load demand respectively.
+
+Initialization: Initialize a 1D array dp with size m + 1, where m is the length of load_demand. Set the first element of dp as 0.
+
+Loop structure: Use a nested loop structure to iterate over the number of power plants and the load demand, respectively. The outer loop variable i ranges from 1 to n, where n is the length of plant_capacity, and the inner loop variable j ranges from plant_capacity[i - 1] to m.
+
+Dynamic Programming: In each iteration of the loop, update dp[j] as the maximum of dp[j] and dp[j - plant_capacity[i - 1]] + plant_capacity[i - 1]. This step represents the decision of whether to use the current power plant to accommodate the load demand or not.
+
+Return: Return dp[m] as the maximum load that can be accommodated using the dynamic programming approach in progressive structure.
 
